@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
+import { Router } from '@reach/router'
+
+import HomePage from './pages/homePage'
+import AboutPage from './pages/aboutPage'
+import NotFoundPage from './pages/notFoundPage'
+import AddPage from './pages/addPage'
+import VideoPage from './pages/videoPage'
+
 function App() {
+
+  const [movies, setMovies] = useState([])
+
+  useEffect(() => {
+    fetch("/api/movies")
+    .then(response=>response.json())
+    .then(data =>setMovies(data.movies))
+
+  }, [movies.id])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <HomePage path="/" movies={movies} />
+        <AboutPage path="/about" />
+        <AddPage path="/add" />
+        <VideoPage path="/video/:id" movies={movies} />
+        <NotFoundPage default />
+      </Router>
     </div>
   );
 }

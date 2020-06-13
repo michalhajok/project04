@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './App.scss';
 
 import { Router } from '@reach/router'
 
@@ -21,15 +21,13 @@ function App() {
   }, [movies.id])
 
   return (
-    <div className="App">
-      <Router>
-        <HomePage path="/" movies={movies} />
-        <AboutPage path="/about" />
-        <AddPage path="/add" />
-        <VideoPage path="/video/:id" movies={movies} />
+      <Router className="App">
+        <HomePage path="/project04/" movies={movies} />
+        <AboutPage path="/project04/about" />
+        <AddPage path="/project04/add" setMovies={setMovies} movies={movies} />
+        <VideoPage path="/project04/video/:id" movies={movies} />
         <NotFoundPage default />
       </Router>
-    </div>
   );
 }
 

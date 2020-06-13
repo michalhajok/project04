@@ -1,0 +1,25 @@
+@import '../../base';
+
+.home{
+
+    form{
+        display: flex;
+        justify-content: center;
+        margin-top: 1em;
+
+        label{
+            background-color: $secondColor;
+            width: 20%;
+            border-radius: 1em;
+            text-align: right;
+
+        }
+        input{
+            height: 2em;
+            width: 80%;
+            text-indent: 0.5em;
+            border: solid white 5px;
+            border-radius: 1em;
+        }
+    }
+}

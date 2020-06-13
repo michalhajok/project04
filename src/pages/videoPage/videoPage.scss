@@ -1,0 +1,24 @@
+@import '../../base';
+
+.videoPage{
+
+    .content{
+        display: grid;
+        grid-template-rows: 1fr 5fr 1fr;
+        grid-template-columns: 1fr 5fr 1fr;
+
+        h2{
+            grid-area: 3/2/4/3;
+            margin-top: 0.5em;
+            align-self: start;
+            justify-self: center;
+        }
+
+        .plyr{
+            justify-self: center;
+            grid-area: 2/2/3/3;
+            width: 800px;
+            height: 480px;
+        }
+    }
+}

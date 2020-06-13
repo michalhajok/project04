@@ -1,11 +1,13 @@
 import React from 'react'
 
-import {PlyrComponent} from 'plyr-react'
+import { PlyrComponent } from 'plyr-react'
 
 import { useParams } from '@reach/router'
 
 import Nav from './../../components/organisms/nav'
 import Footer from './../../components/organisms/footer'
+
+import './videoPage.scss'
 
 const VideoPage = ({movies}) => {
 
@@ -15,15 +17,18 @@ const VideoPage = ({movies}) => {
 		type:'video',
 		sources:[
 			{
-				src: movies[params.id].video_url.replace("https://youtu.be/", ""),
+				src: movies[params.id].video_url,
 				provider:'youtube'
 			}
 		]}
 
 	return (
-		<div>
+		<div className="videoPage">
 			<Nav />
-				<PlyrComponent sources={sources} />
+				<div className="content">
+					<PlyrComponent sources={sources} />
+					<h2>{movies[params.id].title}</h2>
+				</div>
 			<Footer />
 		</div>
 	)

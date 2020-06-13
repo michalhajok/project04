@@ -6,10 +6,10 @@ import Paragraph from './../../atoms/paragraph'
 
 const Video = ({movie}) => {
 
-	const picture =  movie.video_url.replace("https://youtu.be/", "/")
+	const picture =  movie.video_url.replace("https://www.youtube.com/watch?v=", "/")
 
 	return (
-		<HyperLink to={"/video/"+movie.id}>
+		<HyperLink to={"/project04/video/"+movie.id} className="video">
 			<Figure src={"http://i3.ytimg.com/vi" + picture +"/maxresdefault.jpg"} />
 			<Paragraph>{movie.title}</Paragraph>
 		</HyperLink>

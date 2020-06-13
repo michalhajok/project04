@@ -1,0 +1,11 @@
+@import '../../../base';
+
+footer{
+    text-align: center;
+    background-color: $thirdColor;
+    bottom: 0;
+    width: 100%;
+    color: $fourthColor;
+    padding: 1.5em;
+    position: fixed;
+}

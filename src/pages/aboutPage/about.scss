@@ -1,0 +1,22 @@
+@import '../../base';
+
+.aboutPage{
+    text-align: center;
+    height: 80%;
+
+    .about{
+        height: 100%;
+        color: $fourthColor;
+        display: grid;
+        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr;
+    
+        h2{
+            grid-area: 1/2/2/3;
+            align-self: center;
+        }
+        div{
+            grid-area: 2/2/3/3;
+        }
+    }
+}

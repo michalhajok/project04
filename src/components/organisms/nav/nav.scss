@@ -1,0 +1,27 @@
+@import '../../../base';
+
+nav{
+    background-color: $thirdColor;
+
+    ul{
+        display: flex;
+        justify-content: right;
+
+        li{
+            width: 10em;
+            text-align: center;
+
+            a{
+                color: $fourthColor;
+                display: block;
+                padding: 1em;
+                width: 10em;
+            }
+
+            a:hover{
+                box-shadow: 0 -2px 0 0 $secondColor inset;
+                
+            }
+        }
+    }
+}
